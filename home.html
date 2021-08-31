@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+	<nav>
+		<div class=logo>
+			<span>Hack</span>er School
+			
+		</div>
+		<div class="menu">
+			<a href="#">Home</a>
+			<a href="dashboard.html">Dashboard</a>
+			<a href="#">Contact</a>
+			<a href="pro.html">Log Out</a>
+			
+		</div>
+		<div class="search">
+			<i class="fa fa-search"></i>
+			<a href="#">Search</a>
+		</div>
+	</nav>
+	<section>
+		<div class="text">
+			<h1>Welcome to <span>Hack</span>er School</h1>
+			<input type="text" name="" placeholder="Search for course">
+			<button><i class="fa fa-search"></i></button>
+		</div>
+	</section>
+	
+</header>
+<section class="sfilter">
+		<div class="filter">
+			<ul>
+				<li data-filter="*">All</li>
+				<li data-filter="Programming">Programming</li>
+				<li data-filter="Mathematics">Mathematics</li>
+				<li data-filter="Languages">Languages</li>
+			</ul>
+		</div>
+		<div class="course">
+			<div class="item">
+				<a href="c.html"><img src="c.png" width="150" height="100"></a>
+				<br>
+				<p>C Programming</p>
+			</div>
+			<div class="item">
+				<a href="cmaths.html"><img src="cmaths.png" width="150" height="100"></a>
+				<br><p>Calculus</p>
+			</div>
+			<div class="item">
+				<a href="eng.html"><img src="english.jpg" width="150" height="100"></a>
+				<br>
+				<p>English</p>
+			</div>
+			<div class="item">
+				<a href="cpp.html"><img src="cpp.jpg" width="150" height="100"></a>
+				<br>
+				<p>C++ Programming</p>
+			</div>
+			<div class="item">
+				<a href="dmaths.html"><img src="dmaths.jpg" width="150" height="100"></a>
+				<br>
+				<p>Discrete Mathematics</p>
+			</div>
+			<div class="item ">
+				<a href="french.html"><img src="french.jpg" width="150" height="100"></a><br>
+				<p>French</p>
+			</div>
+			<div class="item ">
+				<a href="java.html"><img src="java.png" width="150" height="100">
+				</a><br>
+				<p>Java Programming</p>
+			</div>
+			
+		</div>
+	</section>
+
+
+
+
+	<?php
+
+
+			$servername = "localhost";
+			$username = "username";
+			$password = "password";
+
+			// Create connection
+			$conn = new mysqli($servername, $username, $password);
+			// Check connection
+			if ($conn->connect_error) {
+  			die("Connection failed: " . $conn->connect_error);
+			}
+
+// Create database
+			$sql = "CREATE DATABASE Course";
+			$conn->query($sql) === TRUE)
+
+
+			$sql = "CREATE TABLE MyGuests (
+
+name VARCHAR(30) NOT NULL,
+mobile VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+password VARCHAR(50),
+reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)";
+
+			
+			$n=$_POST['name'];
+			$m=$_POST['mobile'];
+			$e=$_POST['email'];
+			$p=$_POST['password'];
+			
+			
+			$con=new mysqli("localhost","root","","collage");
+			$sql="insert into students values('$n','$m','$e','$p');";
+			
+			$result=$con->query($sql);
+			if($result)
+			{
+				echo"<h1>your response was submitted</h1>";
+			
+			}
+			else
+				echo"<h1>not submitted</h1>";
+	 ?>
+</body>
+</html>
